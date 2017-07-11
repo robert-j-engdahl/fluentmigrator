@@ -100,10 +100,10 @@ namespace FluentMigrator.Runner
         {
             return Assemblies.GetExportedTypes()
                 .FilterByNamespace(Namespace, LoadNestedNamespaces)
-                .Where(t => Conventions.TypeIsMigration(t)
+                .Where(type => Conventions.TypeIsMigration(type)
                             &&
-                            (Conventions.TypeHasMatchingTags(t, TagsToMatch) ||
-                             !Conventions.TypeHasTags(t)));
+                            (Conventions.TypeHasMatchingTags(type, TagsToMatch) ||
+                             !Conventions.TypeHasTags(type)));
         }
     }
 }
